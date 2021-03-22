@@ -1,5 +1,6 @@
 #Базовый класс для сраниц, с которыми будут работать тесты
 from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoAlertPresentException
 
 
 class BasePage():
@@ -15,5 +16,12 @@ class BasePage():
         try:
             self.browser.find_element(how, what)
         except NoSuchElementException:
+            return False
+        return True
+
+    def is_alert_present(self):
+        try:
+            alert = self.browser.switch_to.alert
+        except NoAlertPresentException:
             return False
         return True
