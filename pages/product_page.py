@@ -42,3 +42,9 @@ class ProductPage(BasePage):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
         current_price = self.browser.find_element(*ProductPageLocators.INFO_CURRENT_PRICE).text
         assert product_price == current_price, "Oops, basket total message is wrong!"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_presented(*ProductPageLocators.INFO_PRODUCT_ADD), "Oops, message located, but should not be!"
+
+    def should_be_message_is_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.INFO_PRODUCT_ADD), "Oops, message located, but should be disappeared!"

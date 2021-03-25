@@ -17,5 +17,15 @@ class ProductPageLocators():
     INFO_PRODUCT_ADD = (By.CSS_SELECTOR, "#messages > :nth-child(1) strong")
     
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main > .price_color")
-    INFO_CURRENT_PRICE = (By.CSS_SELECTOR, "#messages > :nth-child(3) strong") 
+    INFO_CURRENT_PRICE = (By.CSS_SELECTOR, "#messages > :nth-child(3) strong")
 
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inv")
+
+
+class BasketPageLocators():
+    BASKET_EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
+    BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group > a")
+    BASKET_CONTENT = (By.CSS_SELECTOR, "#content_inner  h2")
